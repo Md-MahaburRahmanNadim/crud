@@ -37,5 +37,5 @@ app.use('/css', express.static('css'))
 app.use(othersRouter)
 app.use('/users', cheakAuthrizition, userRouter)
 app.listen(PORT, () => {
-  console.log('Our app is listen in port 3000')
+  console.log(`Our server is running on ${PORT}`)
 })

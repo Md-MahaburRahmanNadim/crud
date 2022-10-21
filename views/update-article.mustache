@@ -1,0 +1,38 @@
+{{> header}}
+  <body>
+    <div class="container">
+      <h1>Update article</h1>
+
+    {{> navbar}}
+            <form action="/users/article/edit/" method="post">
+              <div class="mb-3"> 
+                <label for="exampleInputEmail1" class="form-label"
+                  >title</label
+                >
+                <input
+                value="{{title}}"
+                  type="text"
+                  class="form-control"
+                  name="title"
+                />
+              
+                </div>
+              </div>
+              <div class="mb-3">
+               <div class="form-floating">
+  <textarea class="form-control" id="floatingTextarea2" style="height: 100px" name="description">{{description}} </textarea>
+  <label for="floatingTextarea2"> Description</label>
+</div>
+              </div>
+              <input type="hidden" name="articleid" value="{{articleid}}">
+              <div class="mb-3 form-check"></div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        
+
+        </div>
+
+
+    </div>
+  {{>footer}}

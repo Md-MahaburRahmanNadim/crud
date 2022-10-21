@@ -1,0 +1,45 @@
+{{> header}}
+  <body>
+    <div class="container">
+      <h1>Register here</h1>
+
+    {{> navbar}}
+            <form action="/register" method="post">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"
+                  >User name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  name="username"
+                  placeholder="enter  your user name"
+                />
+              
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  name="password"
+                  placeholder="enter your password"
+                />
+              </div>
+              <div class="mb-3 form-check"></div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+         <div class="alert alert-danger" role="alert">
+  This use alredy exist {{message}}
+</div>
+
+        </div>
+
+
+    </div>
+  {{>footer}}

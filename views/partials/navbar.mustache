@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">News app</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <!-- loop portion for else part(^) -->
+        {{^authenticated}}
+        <a class="nav-link" href="/users/article">Login</a>
+        <a class="nav-link" href="/users/article">Register</a>
+        {{/authenticated}}
+        <a class="nav-link" href="/users/article">View all Article</a>
+        <!-- loop portion for if part (#) -->
+        {{#authenticated}}
+        <a class="nav-link" href="/users/article">My Article</a>
+        <a class="nav-link" href="/users/add-article">Add article</a>
+        <a class="nav-link" href="/logout">Logout</a>
+        {{/authenticated}}
+      </div>
+    </div>
+  </div>
+</nav>

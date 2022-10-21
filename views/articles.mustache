@@ -1,0 +1,29 @@
+{{> header}}
+  <body>
+    <div class="container">
+      <h1>Login page</h1>
+
+      {{> navbar}}
+      {{#article}}
+      <h1>{{title}}</h1>
+      <p> {{description}} </p>
+      <div class="button-horozontal">
+      <a href="/users/article/edit/{{articleid}}">
+        edit
+      </a>
+      <!-- for deleting article from -->
+      <form action="/users/delete-article" method="post">
+        <input type="hidden" name="articleid" value="{{articleid}}">
+        <button type="submit">Delete</button> 
+      </form>
+</div>
+      {{/article}}
+          </div>
+
+      
+
+      
+    </div>
+  </div>
+  
+{{> footer}}

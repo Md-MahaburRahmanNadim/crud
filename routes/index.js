@@ -123,5 +123,8 @@ router.post('/register', async (req, res) => {
 router.get('/register', (req, res) => {
   res.render('register')
 })
+router.get('/hello', (req, res) => {
+  res.send('hello')
+})
 
 module.exports = router

@@ -7,6 +7,7 @@ const userRouter = require('./routes/users')
 const othersRouter = require('./routes/index')
 const cheakAuthrizition = require('./utils/authrizition')
 const CONNECTION_STRING = 'postgresql://postgres:nadim@localhost:5432/newsdb'
+const PORT = process.env.PORT || 8080
 db = pgp(CONNECTION_STRING)
 const mustacheExpress = require('mustache-express')
 const app = express()
@@ -33,6 +34,6 @@ app.use((req, res, next) => {
 app.use('/css', express.static('css'))
 app.use(othersRouter)
 app.use('/users', cheakAuthrizition, userRouter)
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('Our app is listen in port 3000')
 })

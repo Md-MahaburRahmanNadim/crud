@@ -1,6 +1,7 @@
 const express = require('express')
 const bcrypt = require('bcrypt')
 const router = express.Router()
+const SALTorROUNDS = 10
 // logout functionality
 router.get('/logout', (req, res, next) => {
   if (req.session) {

@@ -16,10 +16,10 @@
       <div class="navbar-nav">
         <!-- loop portion for else part(^) -->
         {{^authenticated}}
-        <a class="nav-link" href="/users/article">Login</a>
-        <a class="nav-link" href="/users/article">Register</a>
+        <a class="nav-link" href="/users/login">Login</a>
+        <a class="nav-link" href="/register">Register</a>
         {{/authenticated}}
-        <a class="nav-link" href="/users/article">View all Article</a>
+        <a class="nav-link" href="/">View all Article</a>
         <!-- loop portion for if part (#) -->
         {{#authenticated}}
         <a class="nav-link" href="/users/article">My Article</a>

@@ -44,14 +44,22 @@ router.post('/login', async (req, res) => {
               userName: user.username,
               userPassword: user.password,
             }
+            req.session.message =
+              'Thanks for login. Please create your own article'
             res.redirect('/users/add-article')
           } else {
-            res.redirect('/register')
+            res.redirect('/register', {
+              message: `Please login to create your article in our news portal`,
+            })
           }
         } else {
+          req.session.message = `Please login to create your article in our news portal`
           res.redirect('/register')
         }
       })
+    } else {
+      req.session.message = `Please login to create your article in our news portal`
+      res.redirect('/register')
     }
   }
 })
@@ -109,14 +117,16 @@ router.post('/register', async (req, res) => {
     [username]
   )
   if (user) {
-    res.redirect('/login')
+    res.redirect('/login', {
+      message: `This use alredy exist please login ${user.username}`,
+    })
   } else {
     bcrypt.hash(username, SALTorROUNDS, async (error, hash) => {
       await db.none('INSERT INTO users(username,password) VALUES($1,$2)', [
         username,
         hash,
       ])
-      res.redirect('/login')
+      res.redirect('/login', { message: `Walcome our news portal plase login` })
     })
   }
 })

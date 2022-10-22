@@ -4,6 +4,10 @@
       <h1>Register here</h1>
 
     {{> navbar}}
+
+    {{^ message}}
+      <h4> {{message}} </h4>
+      {{/ message}}
             <form action="/register" method="post">
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label"
@@ -35,7 +39,9 @@
             </form>
           </div>
          <div class="alert alert-danger" role="alert">
-  This use alredy exist {{message}}
+  {{^ message}}
+      <h4> {{message}} </h4>
+      {{/ message}}
 </div>
 
         </div>

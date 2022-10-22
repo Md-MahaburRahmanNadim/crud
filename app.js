@@ -6,9 +6,9 @@ const session = require('express-session')
 const userRouter = require('./routes/users')
 const othersRouter = require('./routes/index')
 const cheakAuthrizition = require('./utils/authrizition')
-// const CONNECTION_STRING = 'postgresql://postgres:nadim@localhost:5432/newsdb'
-const CONNECTION_STRING =
-  'postgres://nadim:CRa1yUQfUXlCPWJJv3BzlWv4YFsDyfqT@dpg-cd9846un6mpi3et07mog-a/newsdb'
+const CONNECTION_STRING = 'postgresql://postgres:nadim@localhost:5432/newsdb'
+// const CONNECTION_STRING =
+//   'postgres://nadim:CRa1yUQfUXlCPWJJv3BzlWv4YFsDyfqT@dpg-cd9846un6mpi3et07mog-a/newsdb'
 const PORT = process.env.PORT || 8080
 db = pgp(CONNECTION_STRING)
 const mustacheExpress = require('mustache-express')

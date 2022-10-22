@@ -4,6 +4,7 @@
       <h1>add article</h1>
 
     {{> navbar}}
+    <h1> {{req.session.message}} </h1>
             <form action="/users/add-article" method="post">
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label"
